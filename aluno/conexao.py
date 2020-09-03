@@ -20,11 +20,11 @@ def criar_tabela():
         'Sobrenome str,'
         'Número int,'
         'Série int,'
-        'Notas_1_semestre list,'
-        'Notas_2_semestre list,'
-        'Notas_3_semestre list,'
+        'Notas_1_trimestre list,'
+        'Notas_2_trimestre list,'
+        'Notas_3_trimestre list,'
         'Participação int,'
-        'Faltas)')
+        'Faltas int)')
 
 
 criar_tabela()
