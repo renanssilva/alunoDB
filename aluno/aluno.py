@@ -48,7 +48,7 @@ class Banco:
 
         # Adicionando Aluno
         inserir_aluno = f"""INSERT INTO dados 
-        (Nome, Sobrenome, Número, Série, Notas_1_semestre, Notas_2_semestre, Notas_3_semestre,Participação, Faltas)
+        (Nome, Sobrenome, Número, Série, Notas_1_trimestre, Notas_2_trimestre, Notas_3_trimestre,Participação, Faltas)
         VALUES(
         "{aluno.nome}", "{aluno.sobrenome}", {aluno.numero}, {aluno.serie},
          {aluno.nota_1}, {aluno.nota_2}, {aluno.nota_3}, {aluno.participacao}, {aluno.faltas})"""
@@ -93,7 +93,7 @@ class Banco:
         conn.commit()
 
     @staticmethod
-    def buscaAluno(nome):
+    def buscaAluno(codigo):
         # atribuir uma conexão com o banco de dados
         conn = sqlite3.connect("/home/renan/alunoDB/alunos.db")
 
@@ -101,9 +101,8 @@ class Banco:
         cursor = conn.cursor()
 
         # Executa o comando de deletar aluno:
-        lista = conn.execute(f'SELECT * FROM dados WHERE "Nome" = "{nome}"')
-        for item in lista.fetchall():
-            print(item)
+        lista = conn.execute(f'SELECT * FROM dados WHERE "Código" = "{codigo}"')
+        print(lista.fetchall())
 
         # Efetua um commit no banco de dados.Ñ é efetuado commit automaticamente.
         # Devemos commitar para salvar suas alterações.
