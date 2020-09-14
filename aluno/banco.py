@@ -28,3 +28,7 @@ def criar_tabela():
 
 
 criar_tabela()
+
+
+class Banco:
+    pass
