@@ -1,7 +1,7 @@
 import sqlite3
 
 # definindo o diretóriode onde iremos criar o banco de dados
-path = '/home/renan/alunoDB'
+path = '/'
 print(path)
 
 # atribuir uma conexão com o banco de dados
